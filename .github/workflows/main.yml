@@ -3,7 +3,7 @@ on: push
 jobs:
   hello:
     runs-on: ubuntu-latest
-    step:
+    steps:
     - name: print test command
       run: echo "test"
 
