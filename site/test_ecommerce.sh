@@ -30,13 +30,13 @@ if curl -I "$URL" 2>/dev/null | grep -q "200 OK"; then
                           echo "All tests passed."
 
                           # Check logs for errors
-                          if docker logs ecommerce-test-container | grep -i "error"; then
+                          if docker logs $1 | grep -i "error"; then
                             echo "Errors found in logs."
                               exit 1
                               else
                                 echo "No errors in logs."
                                 fi
                                 #                                # Clean up by stopping the container
-                                docker stop ecommerce-test-container
-                                docker rm ecommerce-test-container
+                                docker stop $1
+                                docker rm $1
 
